@@ -1,1 +1,1 @@
-This repo is for various miscellaneous folders, such as CTF write-ups, cheatsheets etc.
+This repo is for documenting CTF write-ups.

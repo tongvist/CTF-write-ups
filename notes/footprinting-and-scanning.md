@@ -13,11 +13,7 @@ Fping is an improved version of Linux ping that can be used to perform ping swee
 
 Example:
 
-<code>
-
-fping -a -g IPRANGE
-
-</code>
+    fping -a -g <IPRANGE>
 
 -a option forces the tool to show only alive hosts
 
@@ -27,17 +23,11 @@ fping -a -g IPRANGE
 
 Ping scan with nmap can be performed with the -sn flag
 
-Example:
+Examples:
 
-<code>
-
-nmap -sn &lthost or network&gt 
-
-nmap -sn 127.0.0.1
-
-nmap -sn 127.0.0.1/24
-
-</code>
+    nmap -sn <host or network>
+    nmap -sn 127.0.0.1
+    nmap -sn 127.0.0.1/24
 
 ## 2. OS Fingerprinting
 
@@ -57,15 +47,9 @@ Options for OS Detection:
 
 --osscan-guess: Guess the OS more aggressively
 
-<code>
-
-nmap -O < targets >
-
-nmap -O --osscan-limit < targets >
-
-nmap -O --osscan-guess < targets >
-
-</code>
+    nmap -O <targets>
+    nmap -O --osscan-limit <targets>
+    nmap -O --osscan-guess <targets>
 
 ## 3. Port scanning
 
@@ -97,11 +81,7 @@ Version detection scan performs a TCP Connect scan and reads from the server the
 
 Syntax:
 
-<code>
-
-nmap [scan type(s)] [options] < target specification >
-
-</code>
+    nmap [scan type(s)] [options] <target specification>
 
 Common scan types:
 
@@ -114,88 +94,55 @@ Common scan types:
 Examples:
 
 TCP Connect scan with OS detection:
-<code>
 
-nmap -sT -O 127.0.0.1
-
-</code>
+    nmap -sT -O 127.0.0.1
 
 TCP SYN scan:
-<code>
 
-nmap -sS 127.0.0.1
-
-</code>
+    nmap -sS 127.0.0.1
 
 Version detection scan:
-<code>
 
-nmap -sV 127.0.0.1
-
-</code>
+    nmap -sV 127.0.0.1
 
 ### Specifying targets:
 
 In nmap, targets can be specified using DNS names, IP address lists, CIDR notation, wildcards, ranges, octets list and input files. 
 
 Using DNS names:
-<code>
 
-nmap -sV target.some-domain.com another-target.some-other-domain.com
+    nmap -sV target.some-domain.com another-target.some-other-domain.com
 
-</code>
 
 Using list of IP addresses:
-<code>
 
-nmap -sV 127.0.0.1 127.0.0.2 127.0.0.3
-
-</code>
+    nmap -sV 127.0.0.1 127.0.0.2 127.0.0.3
 
 Using CIDR notation:
-<code>
 
-nmap -sV 127.0.0.1/24
-
-</code>
+    nmap -sV 127.0.0.1/24
 
 Using wildcards:
-<code>
 
-nmap -sV 127.0.0.*
-
-nmap -sV 127.0.*.1
-
-</code>
+    nmap -sV 127.0.0.*
+    nmap -sV 127.0.*.1
 
 Using ranges:
-<code>
 
-nmap -sV 127.0.0.1-12
+    nmap -sV 127.0.0.1-12
+    nmap -sV 127.1-3.0.1
 
-nmap -sV 127.1-3.0.1
-
-</code>
 
 Using octet lists:
-<code>
 
-nmap -sV 127.0.0.1,3,22
-
-nmap -sV 127.1,5.0.1
-
-</code>
+    nmap -sV 127.0.0.1,3,22
+    nmap -sV 127.1,5.0.1
 
 ### Specifying ports:
 
 nmap defaults to scanning the most common ports. Ports to be scanned can be specified with -p option. 
 
 Using comma separated list of ports or port range:
-<code>
 
-nmap -sV -p 22,80,443 127.0.0.1
-
-nmap -sV -p 100-1000 127.0.0.1
-
-</code>
-
+    nmap -sV -p 22,80,443 127.0.0.1
+    nmap -sV -p 100-1000 127.0.0.1
